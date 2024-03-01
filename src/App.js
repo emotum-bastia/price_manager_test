@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Importez BrowserRouter, Route et Switch
+import FileViewer from './pages/MainPage';
+import Graphique from './pages/Graphique'; // Importez votre composant GraphPage
+import logo from "./assets/logo_e.png"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <img src={logo} alt='logo_e_emotum' className='App-logo' style={{margin: "20px"}}/>
+        {/* Utilisez Switch pour rendre uniquement la première route correspondante */}
+        <Switch>
+          <Route path="/" exact component={FileViewer} /> {/* Route pour MainPage */}
+          <Route path="/graph" component={Graphique} /> {/* Route pour GraphPage */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
