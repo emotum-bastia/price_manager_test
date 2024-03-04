@@ -6,7 +6,7 @@ import { Scatter } from 'react-chartjs-2';
 const FileViewer = () => {
   const [fileContent, setFileContent] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [dataForChart, setDataForChart] = useState(null);
   const [sessionDiv, setSessionDiv] = useState([]);
 
   useEffect(() => {
