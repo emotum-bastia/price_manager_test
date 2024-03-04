@@ -345,51 +345,42 @@ const FileViewer = () => {
 
       {dataForChart && (
   <div>
-    <Scatter
-  data={{
-    datasets: [{
-      label: 'Différence de prix',
-      data: dataForChart
-        .filter(entry => !entry.site.startsWith('zz') && !entry.site.startsWith('za'))
-        .map(entry => ({ x: entry.site, y: entry.difference })),
-      backgroundColor: 'rgba(255, 99, 132, 0.6)', 
-      borderColor: 'rgba(255, 99, 132, 1)', 
-      borderWidth: 1,
-      pointRadius: 2, 
-    }]
-  }}
-  options={{
-    plugins: {
-      title: {
-        display: true,
-        text: 'Différences de prix par site de recharge', 
-      },
-      legend: {
-        display: true,
-        position: 'bottom', 
-      },
-    },
-    scales: {
-      x: {
-        type: 'category',
-        title: {
-          display: true,
-          text: 'Site de recharge', 
+    <Line
+      data={{
+        labels: dataForChart.map(entry => entry.site),
+        datasets: [{
+          label: 'Différence de prix',
+          data: dataForChart.map(entry => entry.difference),
+          fill: false,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          tension: 0.1 // Cela ajoute une légère courbure aux lignes, mettre à 0 pour des lignes droites
+        }]
+      }}
+      options={{
+        plugins: {
+          title: {
+            display: true,
+            text: 'Différences de prix par site de recharge',
+          },
+          legend: {
+            display: true,
+            position: 'bottom',
+          },
         },
-        beginAtZero: true,
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Différence de prix (€)', 
+        scales: {
+          y: {
+            title: {
+              display: true,
+              text: 'Différence de prix (€)',
+            },
+            beginAtZero: true,
+          },
         },
-        beginAtZero: true,
-      },
-    },
-  }}
-/>
+      }}
+    />
   </div>
 )}
+
 
 
     </div>

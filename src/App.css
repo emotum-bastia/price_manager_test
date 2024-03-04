@@ -8,7 +8,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .App-logo-rotation {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -24,4 +24,19 @@
 
 body {
   background-color: #a4c8ff;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+.check_list input:hover, .check_list label:hover{
+  cursor: pointer;
+}
+
+
+.check_list label{
+  width: 100%;
+  /* background-color: #a4c8ff; */
 }
