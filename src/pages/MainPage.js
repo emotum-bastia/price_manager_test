@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SessionBox from '../components/SessionBox';
+import { Link } from 'react-router-dom';
+import { Scatter } from 'react-chartjs-2';
 
 const FileViewer = () => {
   const [fileContent, setFileContent] = useState('');
