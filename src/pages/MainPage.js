@@ -404,6 +404,7 @@ const styles = {
     backgroundColor: "#a1a1a1",
     textAlign: "center"
   },
+  
   popup: {
     backgroundColor: "#00000070",
     height: "50vh",
