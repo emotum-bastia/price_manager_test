@@ -8,7 +8,7 @@ import orderByDateList from '../functions/orderByDateList';
 import logo from "./../assets/logo_e.png"
 import Popup from "reactjs-popup";
 import { Link } from 'react-router-dom';
-import { Scatter } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 function compareString(first, second)
 {
