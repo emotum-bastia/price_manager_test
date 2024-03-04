@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <img src={logo} alt='logo_e_emotum' className='App-logo' style={{margin: "20px"}}/>
+        
         {/* Utilisez Switch pour rendre uniquement la première route correspondante */}
         <Switch>
           <Route path="/" exact component={FileViewer} /> {/* Route pour MainPage */}

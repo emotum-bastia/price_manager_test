@@ -172,6 +172,7 @@ const FileViewer = () => {
         });
         setListSiteBtn(bufferListBtn);
         setListDiv(final);
+        setDataForChart(final);
       };
 
       reader.readAsText(selectedFile);
