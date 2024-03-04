@@ -306,37 +306,67 @@ const FileViewer = () => {
       <table className="header_table" style={styles.header_table}>
         <tr>
           <td width="40%">
-            site
-            <button className="btn" style={styles.btn} onClick={orderBySite}>˄</button>
-            <button className="btn" style={styles.btn} onClick={orderBySiteRevert}>˅</button>
-            <Popup trigger={<button> choisir site</button>} arrow={false} position="bottom">
-              <div className='popup' style={styles.popup}>
-                <button class="btn" onClick={() => changeAll(false)}>toute activer</button>
-                <button class="btn" onClick={() => changeAll(true)}>toute désactiver</button>
-                {listSiteBtn}
+            <div className='category'>
+              <div className='title_category'>
+                site
               </div>
-            </Popup>
+              <div className='order' style={styles.order}>
+                <button className="btn" style={styles.btn} onClick={orderBySite}>˄</button>
+                <button className="btn" style={styles.btn} onClick={orderBySiteRevert}>˅</button>
+              </div>
+              <Popup trigger={<button> choisir site</button>} arrow={false} position="bottom">
+                <div className='popup' style={styles.popup}>
+                  <button class="btn" onClick={() => changeAll(false)}>toute activer</button>
+                  <button class="btn" onClick={() => changeAll(true)}>toute désactiver</button>
+                  {listSiteBtn}
+                </div>
+              </Popup>
+            </div>
           </td>
           <td width="16%">
-            date
-            <button className="btn" style={styles.btn} onClick={orderByDate}>˄</button>
-            <button className="btn" style={styles.btn} onClick={orderByDateRevert}>˅</button>
+            <div className='category'>
+              <div className='title_category'>
+                date
+              </div>
+              <div className='order' style={styles.order}>
+                <button className="btn" style={styles.btn} onClick={orderByDate}>˄</button>
+                <button className="btn" style={styles.btn} onClick={orderByDateRevert}>˅</button>
+              </div>
+            </div>
           </td>
           <td width="12%">
-            consommation en kWh
-            <button className="btn" style={styles.btn} onClick={orderByConsommation}>˄</button>
-            <button className="btn" style={styles.btn} onClick={orderByConsommationRevert}>˅</button>
+            <div className='category'>
+              <div className='title_category'>
+                consommation en kWh
+              </div>
+              <div className='order' style={styles.order}>
+                <button className="btn" style={styles.btn} onClick={orderByConsommation}>˄</button>
+                <button className="btn" style={styles.btn} onClick={orderByConsommationRevert}>˅</button>
+              </div>
+            </div>
           </td>
           <td width="10%">
-            prix en €
-            <button className="btn" style={styles.btn} onClick={orderByPrice}>˄</button>
-            <button className="btn" style={styles.btn} onClick={orderByPriceRevert}>˅</button>
+            <div className='category'>
+              <div className='title_category'>
+              prix en €
+              </div>
+              <div className="order" style={styles.order}>
+                <button className="btn" style={styles.btn} onClick={orderByPrice}>˄</button>
+                <button className="btn" style={styles.btn} onClick={orderByPriceRevert}>˅</button>
+              </div>
+            </div>
           </td>
           <td width="10%">prix théorique en €</td>
           <td width="10%">
-            différence en €
-            <button className="btn" style={styles.btn} onClick={orderByDifference}>˄</button>
-            <button className="btn" style={styles.btn} onClick={orderByDifferenceRevert}>˅</button>
+            <div className='category'>
+              <div className='title_category'>
+                différence en €
+              </div>
+            <div className='order' style={styles.order}>
+                <button className="btn" style={styles.btn} onClick={orderByDifference}>˄</button>
+                <button className="btn" style={styles.btn} onClick={orderByDifferenceRevert}>˅</button>
+              </div>
+            </div>
           </td>
           <td width="2%"></td>
         </tr>
@@ -408,6 +438,10 @@ const styles = {
     backgroundColor: "white",
     padding: "0.5rem",
     margin: "0.25rem"
+  },
+  order: {
+    display: "flex",
+    flexDirection: "column"
   }
 }
 export default FileViewer;

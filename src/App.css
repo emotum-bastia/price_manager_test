@@ -40,3 +40,12 @@ body {
   width: 100%;
   /* background-color: #a4c8ff; */
 }
+
+.category {
+  display: flex;
+}
+
+.title_category {
+  width: 85%;
+  text-align: center;
+}
