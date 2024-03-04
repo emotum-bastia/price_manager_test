@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import SessionBox from '../components/SessionBox';
-import { Link } from 'react-router-dom';
-import { Scatter } from 'react-chartjs-2';
 
 const FileViewer = () => {
   const [fileContent, setFileContent] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
+
   const [sessionDiv, setSessionDiv] = useState([]);
-  const [dataForChart, setDataForChart] = useState(null);
 
   useEffect(() => {
     if (selectedFile) {
@@ -17,19 +15,19 @@ const FileViewer = () => {
         buffer.shift();
         var final = [];
         buffer.forEach(element => {
-          console.log("element:" + element);
-          var splited = element.split(',');
-          var computePrice = Number(splited[16]).toFixed(2) * 0.55;
-          var difference = Number(splited[19]).toFixed(2) - computePrice;
+            console.log("element:" + element);
+            var splited = element.split(',');
+            var computePrice = Number(splited[16]).toFixed(2) * 0.55;
+            var difference = Number(splited[19]).toFixed(2) - computePrice;
 
-          final.push({
-            site: splited[1].replace("\"", "").replace("\"", ""),
-            date:splited[12].replace("\"", "").replace("\"", ""),
-            consommation: Number(splited[16]),
-            price: Number(splited[19]),
-            computePrice: computePrice,
-            difference: difference
-          });
+            final.push({
+                site: splited[1].replace("\"", "").replace("\"", ""),
+                date:splited[12].replace("\"", "").replace("\"", ""),
+                consommation: Number(splited[16]),
+                price: Number(splited[19]),
+                computePrice: computePrice,
+                difference: difference
+            });
         });
         setFileContent(JSON.stringify(final));
         var sessionBufferDiv = [];
@@ -42,11 +40,10 @@ const FileViewer = () => {
             consommation={element.consommation}
             price={element.price}
             computePrice={element.computePrice.toFixed(2)}
-            difference={element.difference.toFixed(2)}
+            difference={element.difference.toFixed(2)} 
           />)
         );
         setSessionDiv(sessionBufferDiv);
-        setDataForChart(final); // Mettre à jour les données pour le graphique
       };
 
       reader.readAsText(selectedFile);
@@ -140,4 +137,5 @@ const styles = {
 }
 
 export default FileViewer;
+      
 
