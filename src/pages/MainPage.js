@@ -298,11 +298,11 @@ const FileViewer = () => {
   
   return (
     <div>
-      <img src={logo} alt='logo_e_emotum' className={'App-logo ' + (rotation ? 'App-logo-rotation' : '')} style={{
+      <img src={logo} id="start" alt='logo_e_emotum' className={'App-logo ' + (rotation ? 'App-logo-rotation' : '')} style={{
         margin: "20px", backgroundColor: "white", borderRadius: "50%"
       }}/>
       <input type="file" onChange={handleFileChange} />
-
+      <a href='#chart'>voir graph</a>
       <table className="header_table" style={styles.header_table}>
         <tr>
           <td width="40%">
@@ -375,10 +375,18 @@ const FileViewer = () => {
       {sessionDiv}
 
       {dataForChart && (
-  <div>
+  <div id="chart">
+    <a href='#start'>haut de page</a>
+    <Popup trigger={<button> choisir site</button>} arrow={false} position="bottom">
+      <div className='popup' style={styles.popup}>
+        <button class="btn" onClick={() => changeAll(false)}>toute activer</button>
+        <button class="btn" onClick={() => changeAll(true)}>toute désactiver</button>
+        {listSiteBtn}
+      </div>
+    </Popup>
     <Line
       data={{
-        labels: dataForChart.map(entry => entry.site),
+        labels: dataForChart.map(entry => !listSite.find(function (cursor) { return cursor.name == entry.site}).hide ? entry.site : null),
         datasets: [{
           label: 'Différence de prix',
           data: dataForChart.map(entry => entry.difference),
