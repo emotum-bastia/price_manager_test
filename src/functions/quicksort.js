@@ -1,5 +1,19 @@
 import React from "react";
 
+function isSort(list, range) {
+    var last = list[0][range];
+
+    console.log("list:" + JSON.stringify(list));
+    console.log("range:" + range);
+    if (list.length < 1) return true;
+    for (var i = 1; i < list.length; i++) {
+        console.log("i:" + i + "first:" + last + " second:" + list[i][range] + "=" + JSON.stringify(last > list[i][range]));
+        if (last > list[i][range]) return false;
+        last = list[i][range];
+    }
+    return true;
+}
+
 function quicksort(fileContent, range)
 {
     var items = fileContent;
@@ -45,6 +59,8 @@ function quicksort(fileContent, range)
     }
     // first call to quick sort
     var sortedArray = quickSort(items, 0, items.length - 1);
+    while (!isSort(sortedArray, range))
+        sortedArray = quickSort(sortedArray, 0, sortedArray.length - 1);
     return sortedArray;
 
 }

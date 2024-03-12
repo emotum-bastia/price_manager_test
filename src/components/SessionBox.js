@@ -8,8 +8,8 @@ function SessionBox({site, date, consommation, price, computePrice, difference})
             <table className="table_session" style={styles.table_session}>
                 <tr>
                     <td width="40%">{site}</td>
-                    <td width="16%">{date}</td>
-                    <td width="12%">{consommation} kWh</td>
+                    <td width="12%">{date}</td>
+                    <td width="16%">{consommation} kWh</td>
                     <td width="10%">{price}€</td>
                     <td width="10%">{computePrice}€</td>
                     <td width="10%">{difference}€</td>

@@ -15,7 +15,6 @@ function orderBySiteList(fileContent) {
                 bufferListOrdered.push(session);
         });
     });
-    console.log(JSON.stringify(bufferListOrdered))
     return bufferListOrdered;
 }
 

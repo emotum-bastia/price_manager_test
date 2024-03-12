@@ -24,6 +24,13 @@
 
 body {
   background-color: #a4c8ff;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: 0;
+  padding: 0;
 }
 
 .btn:hover {
@@ -45,7 +52,157 @@ body {
   display: flex;
 }
 
+
+
+.selection-section {
+  display: flex;
+  margin: auto;
+  width: 50vw;
+  justify-content: space-around;
+  align-items: center;
+  height: 5rem;
+}
+
+
+
+.btn-session {
+  background-color: rgba(255, 255, 255);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: white solid 2.5px;
+}
+
+
+.btn-session:hover {
+  background-color: rgba(200, 200, 200);
+  border: rgba(200, 200, 200) solid 2.5px;
+}
+
+.add-section {
+  display: flex;
+  justify-content: center;
+}
+
+.input-titre {
+  padding: 0.5rem;
+  min-height: 1rem;
+  border-radius: 20px 0 0 20px;
+  border: rgb(12, 44, 104, 0) solid 0px;
+  margin: 1px;
+  outline: none;
+}
+
+
+.input-file {
+  padding: 0.5rem;
+  min-height: 20px;
+  background-color: white;
+  border: rgb(12, 44, 104, 0) solid 0px;
+  margin: 1px;
+  display: flex;
+}
+
+.input-file::file-selector-button {
+  background-color: rgb(0, 132, 255);
+  border-radius: 5px;
+  padding: 0.25rem;
+  color: white;
+  border: none;
+}
+
+.input-file::file-selector-button:hover {
+  background-color: rgb(47, 155, 255);
+  cursor: pointer;
+}
+
+.btn-create {
+  padding: 0.5rem;
+  min-height: 20px;
+  border-radius: 0 20px 20px 0;
+  border: rgba(81, 140, 248, 0) solid 2px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  margin: 1px;
+  transition: all linear 0.05s;
+}
+
+.btn-create:hover {
+  border: rgba(255,255,255, 100) solid 2px;
+  background-color: rgb(0, 132, 255);
+}
+
+
+.btn-up {
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(81, 140, 248, 0) solid 2px;
+  border-radius: 20px 20px 0 0;
+  margin: 0.5px;
+}
+
+.btn-up:hover {
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(255, 255, 255, 100) solid 2px;
+  border-radius: 20px 20px 0 0;
+}
+
+.btn-down {
+  margin: 0.5px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(81, 140, 248, 0) solid 2px;
+  border-radius: 0 0 20px 20px;
+}
+
+.btn-down:hover {
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(255, 255, 255, 100) solid 2px;
+  border-radius: 0 0 20px 20px;
+}
+
+.btn-place {
+  margin-left: 3px;
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(81, 140, 248, 0) solid 2px;
+  border-radius: 8px;
+}
+
+.btn-place:hover {
+  background-color: rgb(0, 132, 255);
+  color: white;
+  border: rgba(255, 255, 255, 100) solid 2px;
+}
+
+.header_table td {
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header_table {
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-radius:  50px;
+  border: black solid 1px;
+}
+
 .title_category {
   width: 85%;
   text-align: center;
+  vertical-align: text-bottom;
+  line-height: 2rem;
+}
+
+.btn-chart, .btn-chart:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.btn-chart:hover, .btn-chart:visited:hover {
+  color: blue;
+  text-decoration: underline;
 }

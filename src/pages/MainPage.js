@@ -9,9 +9,9 @@ import logo from "./../assets/logo_e.png"
 import Popup from "reactjs-popup";
 import { Link } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
+import { Auth } from '../components/auth';
 
-function compareString(first, second)
-{
+function compareString(first, second) {
   first = first.toLowerCase();
   second = second.toLowerCase();
 
@@ -182,6 +182,7 @@ const FileViewer = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+    console.log("file = " + JSON.stringify(file));
     setSelectedFile(file);
   };
 
@@ -303,6 +304,7 @@ const FileViewer = () => {
       }}/>
       <input type="file" onChange={handleFileChange} />
       <a href='#chart'>voir graph</a>
+      <br/><a href='/load'>NOUVEAU</a>
       <table className="header_table" style={styles.header_table}>
         <tr>
           <td width="40%">
