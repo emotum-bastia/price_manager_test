@@ -1,10 +1,10 @@
 import React from "react";
-import quicksort from "./quicksort";
+import {quicksort, quicksortNumber} from "./quicksort";
 
 
 function orderByConsommationList(fileContent) {
 
-    return quicksort(fileContent, "consommation");
+    return quicksortNumber(fileContent, "consommation");
 }
 
 export default orderByConsommationList;

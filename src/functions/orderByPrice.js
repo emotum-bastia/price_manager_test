@@ -1,10 +1,10 @@
 import React from "react";
-import quicksort from "./quicksort";
+import { quicksortNumber } from "./quicksort";
 
 
-function orderByPriceList(fileContent) {
-
-    return quicksort(fileContent, "price");
+function orderByPriceList(fileContent)
+{
+    return quicksortNumber(fileContent, "price");
 }
 
 export default orderByPriceList;

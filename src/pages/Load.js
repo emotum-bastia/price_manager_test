@@ -269,13 +269,12 @@ function Load() {
     }
 
     function orderByDifference() {
-        console.log("ici -> filecontent"+ JSON.stringify(fileContent));
-        var bufferNewList = orderByDifferenceList(fileContent);
+        var bufferNewList = orderByDifferenceList(fileContent, tarif);
         setListDiv(bufferNewList);
     }
 
     function orderByDifferenceRevert() {
-        var bufferNewList = orderByDifferenceList(fileContent);
+        var bufferNewList = orderByDifferenceList(fileContent, tarif);
         bufferNewList.reverse();
         setListDiv(bufferNewList);
     }

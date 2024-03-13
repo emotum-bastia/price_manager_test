@@ -1,5 +1,5 @@
 import React from "react";
-import quicksort from "./quicksort";
+import {quicksort} from "./quicksort";
 
 
 function orderByDateList(fileContent) {
