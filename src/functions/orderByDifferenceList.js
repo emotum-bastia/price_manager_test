@@ -1,6 +1,6 @@
 import React from "react";
 
-import {quicksort} from "./quicksort";
+import {quicksort, quicksortNumber} from "./quicksort";
 
 
 function orderByDifferenceList(fileContent, tarif) {
@@ -13,7 +13,7 @@ function orderByDifferenceList(fileContent, tarif) {
         element.difference = difference.toFixed(2) == -0 ? 0 : difference.toFixed(2);
         console.log("difference:" + tarif + "---" + computePrice);
     });
-    return quicksort(bufferList, "difference");
+    return quicksortNumber(bufferList, "difference");
 }
 
 export default orderByDifferenceList;
