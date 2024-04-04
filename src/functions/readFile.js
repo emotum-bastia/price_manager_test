@@ -1,3 +1,9 @@
+const CHARGING_STATION_ID = 1;
+const DATE = 15;
+const CONSUMPTION = 17;
+const PRICE = 20;
+
+
 function readFile(fileContent, tarif) {
     if (fileContent.length < 1 || !fileContent) return null;
     var buffer = fileContent.split('\n');
@@ -7,15 +13,16 @@ function readFile(fileContent, tarif) {
     buffer.forEach(function (element) {
         if (!element) return;
         var splited = element.split(',');
-        if (!splited[1] || !splited[12] || !splited[19] || !splited) return;
+        if (!splited[CHARGING_STATION_ID] || !splited[DATE] || !splited[CONSUMPTION] || !splited[PRICE] || !splited) return;
 
-        var consommation = Number(splited[16]).toFixed(2);
-        var price = Number(splited[19]).toFixed(2);
+        var consommation = Number(splited[CONSUMPTION]).toFixed(2);
+        var price = Number(splited[PRICE]).toFixed(2);
         var computePrice = consommation * tarif;
         var difference = price - computePrice;
-        var site = splited[1].replace("\"","").replace("\"","");
-        var date = splited[12].replace("\"","").replace("\"","");
+        var site = splited[CHARGING_STATION_ID].replace("\"","").replace("\"","");
+        var date = splited[DATE].replace("\"","").replace("\"","");
         var timestamp = Date.parse(date);
+
         final.push({
             site: site,
             date: date,

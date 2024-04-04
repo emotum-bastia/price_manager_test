@@ -1,21 +1,19 @@
-import { collection, getDocs, addDoc } from "firebase/firestore";
 import { Fragment, useEffect, useState } from "react";
-import Popup from "reactjs-popup";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+
 import { Line } from 'react-chartjs-2';
-
-import { db } from "../functions/dbConnection";
-import readFile from "../functions/readFile";
-import logo from "./../assets/logo_e.png"
-
-import orderBySiteList from '../functions/orderBySiteList';
-import orderByConsommationList from '../functions/orderByConsommationList';
-import orderByPriceList from '../functions/orderByPrice';
-import orderByDifferenceList from '../functions/orderByDifferenceList';
-import orderByDateList from '../functions/orderByDateList';
+import Popup from "reactjs-popup";
 import SessionBox from "../components/SessionBox";
-import compareString from "../functions/compareString";
 import { Switch } from "react-router-dom/cjs/react-router-dom.min";
-
+import compareString from "../functions/compareString";
+import { db } from "../functions/dbConnection";
+import logo from "./../assets/logo_e.png"
+import orderByConsommationList from '../functions/orderByConsommationList';
+import orderByDateList from '../functions/orderByDateList';
+import orderByDifferenceList from '../functions/orderByDifferenceList';
+import orderByPriceList from '../functions/orderByPrice';
+import orderBySiteList from '../functions/orderBySiteList';
+import readFile from "../functions/readFile";
 
 function Load() {
     const [fileContent, setFileContent] = useState(null); 
@@ -188,7 +186,7 @@ function Load() {
     async function createCollection() {
         if (!fileContent || fileContent == []) {
             alert("fichier invalide, veuillez selectionner un fichier valide pour l'ajouter");
-            console.erro("empty file");
+            console.error("empty file");
             return;
         }
         try {
