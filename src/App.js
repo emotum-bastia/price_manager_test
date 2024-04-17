@@ -1,12 +1,13 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Importez BrowserRouter, Route et Switch
+
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'; // Importez BrowserRouter, Route et Switch
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+
 import FileViewer from './pages/MainPage';
 import Graphique from './pages/Graphique'; // Importez votre composant GraphPage
-import { db } from "./functions/dbConnection"
-import { useEffect, useState } from 'react';
-import { getDocs, collection } from "firebase/firestore";
 import Load from './pages/Load';
-
+import { db } from "./functions/dbConnection"
 
 function App() {
 
@@ -17,9 +18,9 @@ function App() {
       <div className="App">
 
         <Switch>
-          <Route path="/" exact component={FileViewer} /> {/* Route pour MainPage */}
+          <Route path="/" exact component={Load} /> {/* Route pour MainPage */}
           <Route path="/graph" component={Graphique} /> {/* Route pour GraphPage */}
-          <Route path="/Load" component={Load} /> {/* Route pour Load */}
+          <Route path="/Load" component={FileViewer} /> {/* Route pour Load */}
           <Route path="/load" component={Load} /> {/* Route pour Load */}
           <Route path="/loads" component={Load} /> {/* Route pour Load */}
           <Route path="/Loads" component={Load} /> {/* Route pour Load */}
